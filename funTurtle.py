@@ -19,7 +19,7 @@ square.goto(-100, -100)
 print(a)
 '''
 
-speed = 5
+speed = 2.5
 
 UP = 0
 LEFT = 1
@@ -71,9 +71,12 @@ def right():
     turtle.goto(x + speed, y)
     print(turtle.pos())
 
+    turtle.right(90)
+
 def left():
     direction = LEFT
     print(direction)
+    
 
     oldPos = turtle.pos()
     x, y = oldPos
@@ -81,12 +84,17 @@ def left():
     turtle.goto(x - speed, y)
     print(turtle.pos())
 
+    turtle.left(90)
+
 turtle.onkeypress(up, UP_ARROW)
 turtle.onkeypress(down, DOWN_ARROW)
 turtle.onkeypress(right, RIGHT_ARROW)
 turtle.onkeypress(left, LEFT_ARROW)
 turtle.onkeypress(turtle.stamp, SPACEBAR)
 turtle.listen()
+
+while True:
+    turtle.forward(speed)
 
 
 turtle.mainloop()
